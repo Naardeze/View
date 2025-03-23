@@ -1,2 +1,2 @@
 # View
-Small Simple Agenda In Java Swing
+Small Simple Week (Year Based) Agenda In Java Swing
