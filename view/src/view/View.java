@@ -62,7 +62,7 @@ final public class View extends JDialog {
                 if (localDate.getYear() == year.getValue()) {
                     JLabel dateLabel = new JLabel(localDate.getDayOfMonth() + "\u2010" + localDate.getMonthValue(), JLabel.CENTER);
                     JButton ioButton = new JButton(SAVE);
-                    JTextArea textArea = new JTextArea(notes.getOrDefault(localDate, ""), 3, 7);
+                    JTextArea textArea = new JTextArea(notes.getOrDefault(localDate, ""), 4, 9);
                     JScrollPane scrollPane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
                     
                     if (localDate.equals(LocalDate.now())) {
