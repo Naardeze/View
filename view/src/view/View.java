@@ -48,6 +48,7 @@ final public class View extends JDialog {
 
         for (int week = (year.atDay(1).getDayOfWeek().ordinal() + LocalDate.now().withYear(year.getValue()).getDayOfYear() - 1) / DayOfWeek.values().length, december31 = 53 + year.length() / 366 / year.atDay(year.length()).getDayOfWeek().getValue(); yearPanel.getComponentCount() < december31; week = ++week % december31) {
             JPanel weekPanel = new JPanel(new BorderLayout());
+
             weekPanel.add(new JLabel("week " + (week + 1 - year.atDay(1).getDayOfWeek().getValue() / DayOfWeek.FRIDAY.getValue()), JLabel.CENTER), BorderLayout.NORTH);
 
             JPanel monday_Friday = new JPanel(new GridLayout(3, 2));
@@ -55,6 +56,7 @@ final public class View extends JDialog {
 
             for (DayOfWeek day : new DayOfWeek[] {DayOfWeek.MONDAY, DayOfWeek.THURSDAY, DayOfWeek.TUESDAY, DayOfWeek.FRIDAY, DayOfWeek.WEDNESDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY}) {
                 JPanel dayPanel = new JPanel(new BorderLayout());
+
                 dayPanel.setBorder(BorderFactory.createMatteBorder(1, day.getValue() / DayOfWeek.THURSDAY.getValue(), 0, 0, Color.darkGray));
                 
                 LocalDate localDate = year.atDay(1).minusDays(year.atDay(1).getDayOfWeek().ordinal()).plusWeeks(week).plusDays(day.ordinal());
